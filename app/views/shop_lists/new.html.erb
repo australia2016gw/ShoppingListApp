@@ -1,0 +1,25 @@
+<h1>ShoppingList Make</h1>
+
+<%# エラーがあったら表示する %>
+<% if @shoplist.errors.any? %>
+  <ul>
+    <% @shoplist.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%# modelにはコントローラで作った空のメモを指定する %>
+<%= form_with(model: @shoplist, local: true) do |form| %>
+  <div class="field">
+    <%# メモ内容を入力するテキストエリア(labelはその説明) %>
+    <%= form.label :to_buy %><br>
+    <%= form.text_area :to_buy %>
+  </div>
+  <div class="actions">
+    <%# 送信ボタン %>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to('一覧へ戻る', shop_lists_path) %>

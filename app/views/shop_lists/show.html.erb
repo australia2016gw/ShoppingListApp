@@ -1,0 +1,9 @@
+<h1>ShoppingList Show</h1>
+
+<pre><%= @shoplist.to_buy %></pre>
+
+<%= link_to '削除', "/shop_lists/#{@shoplist.id}", method: :delete %>
+
+<%= link_to('戻る', :back) %>
+
+<%= link_to('一覧へ戻る', shop_lists_path) %>

@@ -1,0 +1,17 @@
+<h1>Shopping List</h1>
+<p>
+  If you wanna buy something, click
+  <a href="https://www.amazon.co.jp/">here</a>
+  !!!!!
+</p>
+
+<ol>
+  <% @shoplist.each do |list| %>
+    <%= link_to list do %>
+      <li><%= list.to_buy %><%= "\t" %><%= link_to '削除', "/shop_lists/#{list.id}", method: :delete %></li>
+    <% end %>
+    
+  <% end %>
+</ol>
+
+<%= link_to('新規作成', new_shop_list_path) %>
