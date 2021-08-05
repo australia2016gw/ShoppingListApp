@@ -8,7 +8,11 @@
 <ol>
   <% @shoplist.each do |list| %>
     <%= link_to list do %>
-      <li><%= list.to_buy %><%= "\t" %><%= link_to '削除', "/shop_lists/#{list.id}", method: :delete %></li>
+      <li>
+        <%= list.to_buy %>
+        <%= "\t" %>
+        <%= link_to '削除', "/shop_lists/#{list.id}", method: :delete, data: { confirm: '【確認】削除しますか？' } %>
+      </li>
     <% end %>
     
   <% end %>

@@ -32,12 +32,11 @@ class ShopListsController < ApplicationController
   end
   
   def destroy
-    #デバッグ用
-    puts params[:id]
     list = ShopList.find(params[:id])
      if !list.nil?
         ShopList.find(params[:id]).destroy #destroyメソッドを使用し対象のリストを削除する。
      end
+     #削除後にindexアクションを呼び出してリスト一覧を表示する。
+     redirect_to :action => 'index'
   end
-  
 end

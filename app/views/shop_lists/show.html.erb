@@ -2,7 +2,7 @@
 
 <pre><%= @shoplist.to_buy %></pre>
 
-<%= link_to '削除', "/shop_lists/#{@shoplist.id}", method: :delete %>
+<%= link_to '削除', "/shop_lists/#{@shoplist.id}", method: :delete, data: { confirm: '削除しますか？' } %>
 
 <%= link_to('戻る', :back) %>
 
