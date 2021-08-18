@@ -1,0 +1,19 @@
+@import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+/*
+.jumbotron {
+  background-image: url("/home/ubuntu/environment/ShoppingListApp/app/assets/images/sample.png");
+  background-size: cover;
+  background-position: center 60%;
+}
+*/
+
+
+.jumbotron {
+  color: orange;
+  font-size: 20px;
+  background-image: url("../../assets/images/sample.png");
+  background-size: cover;
+  background-position: center 60%;
+}

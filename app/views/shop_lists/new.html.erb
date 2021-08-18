@@ -1,4 +1,4 @@
-<h1>ShoppingList Make</h1>
+<h1 class="display-4">Add List</h1>
 
 <%# エラーがあったら表示する %>
 <% if @shoplist.errors.any? %>
@@ -13,12 +13,16 @@
 <%= form_with(model: @shoplist, local: true) do |form| %>
   <div class="field">
     <%# メモ内容を入力するテキストエリア(labelはその説明) %>
-    <%= form.label :to_buy %><br>
+    <%#= form.label :to_buy %>
+    <h6>買いたいもの</h6>
     <%= form.text_area :to_buy %>
   </div>
   <div class="actions">
     <%# 送信ボタン %>
-    <%= form.submit %>
+    <!-- ↓onClickイベントを追加 -->
+    <input type="submit" name="commit" value="add" data-disable-with="add">
+    <%# 下記で簡易的に送信ボタンが作れるが、ボタン名は指定できない %>
+    <%#= form.submit %>
   </div>
 <% end %>
 

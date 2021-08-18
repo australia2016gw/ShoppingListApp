@@ -1,11 +1,19 @@
 // Place all the styles related to the shop_lists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-h1 {
+/*h1 {
   background-color: #fff;
   color: #333;
   margin: 33px;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 33px;
+  font-size: px;
   line-height: 18px;
+}*/
+ @import "bootstrap";
+ 
+ 
+.jumbotron {
+  background-image: url("/home/ubuntu/environment/ShoppingListApp/app/assets/images/sample.png");
+  background-size: cover;
+  background-position: center 60%;
 }

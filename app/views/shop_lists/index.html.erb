@@ -1,21 +1,36 @@
-<h1>Shopping List</h1>
+<h1 class="display-4">Shopping List</h1>
+
 <p>
   If you wanna buy something, click
-  <a href="https://www.amazon.co.jp/">here</a>
+  <a class="btn btn-info btn-sm" href="https://www.amazon.co.jp/">here</a>
   !!!!!
 </p>
-
-<ol>
-  <% @shoplist.each do |list| %>
-    <%= link_to list do %>
-      <li>
-        <%= list.to_buy %>
-        <%= "\t" %>
-        <%= link_to '削除', "/shop_lists/#{list.id}", method: :delete, data: { confirm: '【確認】削除しますか？' } %>
-      </li>
+<div class="jumbotron m-3">
+  <div class="list-group">
+    <% @shoplist.each do |list| %>
+      <%= link_to list do %>
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-action ">
+            <div class="checkbox">
+              <label>
+              <input type="checkbox" v-model="item.checked">
+              <%= list.to_buy %>
+              <%= link_to "/shop_lists/#{list.id}", method: :delete, data: { confirm: '【確認】削除しますか？' }, class: 'btn btn-default' do %>
+                <i class="fa fa-arrow-left"></i>
+                <span>削除</span>
+              <% end %>
+              </label>
+            </div>
+          </li>
+        </ul>
+      <% end %>
     <% end %>
-    
-  <% end %>
-</ol>
+  </div>
+</div>
+<%= link_to new_shop_list_path do %>
+  <button class="btn btn-primary btn-lg" >新規作成</button>
+<% end %>
 
-<%= link_to('新規作成', new_shop_list_path) %>
+
+<script src="test.js">
+</script>
